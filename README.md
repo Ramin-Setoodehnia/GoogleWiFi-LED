@@ -1,6 +1,6 @@
-# Sync Google Wifi LEDs With Passwall2
+# Sync Google WiFi LEDs With Passwall2
 
-## 🛠 Fast Install
+## Fast Install
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/Ramin-Setoodehnia/GoogleWiFi-LED/refs/heads/main/install.sh -o /tmp/install.sh && chmod +x /tmp/install.sh && /tmp/install.sh
