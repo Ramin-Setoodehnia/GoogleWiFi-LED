@@ -48,7 +48,7 @@ test_proxy() {
         if [ "$status" = "200" ]; then
                 result=0
         else
-                status2=$(test_url "https://www.baidu.com" ${retry_num} ${connect_timeout})
+                status2=$(test_url "https://www.youtube.com" ${retry_num} ${connect_timeout})
                 if [ "$status2" = "200" ]; then
                         result=1
                 else
