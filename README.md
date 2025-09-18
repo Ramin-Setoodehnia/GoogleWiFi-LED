@@ -4,9 +4,10 @@
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/Ramin-Setoodehnia/GoogleWifiLED/refs/heads/main/install.sh -o /tmp/install.sh && chmod +x /tmp/install.sh && /tmp/install.sh
-
+```
+```bash
 reboot
-
+```
 -----------------------
 رقص نور : پسوال ران نیست !
 
