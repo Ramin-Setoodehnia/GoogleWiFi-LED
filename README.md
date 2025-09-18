@@ -3,7 +3,7 @@
 ## Fast Install
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/Ramin-Setoodehnia/GoogleWiFi-LED/refs/heads/main/install.sh -o /tmp/install.sh && chmod +x /tmp/install.sh && /tmp/install.sh
+curl -sSL https://raw.githubusercontent.com/Ramin-Setoodehnia/GoogleWiFi-LED/refs/heads/main/install.sh -o /install.sh && chmod +x /install.sh && /install.sh
 ```
 ```bash
 reboot
