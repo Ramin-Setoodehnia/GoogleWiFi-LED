@@ -60,5 +60,5 @@ while true; do
     set_color green
   fi
 
-  sleep 5 
+  sleep 10 
 done
