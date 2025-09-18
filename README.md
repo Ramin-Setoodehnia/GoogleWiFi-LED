@@ -9,6 +9,8 @@ curl -sSL https://raw.githubusercontent.com/Ramin-Setoodehnia/GoogleWifiLED/refs
 reboot
 ```
 -----------------------
+وضعیت رنگ چراغ ها !
+
 رقص نور : پسوال ران نیست !
 
 نور سبز : کیفیت کانفیگ عالی
