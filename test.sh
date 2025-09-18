@@ -43,23 +43,25 @@ test_url() {
 }
 
 test_proxy() {
+    result=0
+
+    status=$(test_url "https://www.google.com/generate_204" ${retry_num} ${connect_timeout})
+    if [ "$status" = "204" ] || [ "$status" = "200" ]; then
         result=0
-        status=$(test_url "https://www.google.com/generate_204" ${retry_num} ${connect_timeout})
-        if [ "$status" = "200" ]; then
-                result=0
+    else
+        status2=$(test_url "https://www.twitter.com" ${retry_num} ${connect_timeout})
+        if [ "$status2" = "200" ]; then
+            result=1
         else
-                status2=$(test_url "https://www.youtube.com" ${retry_num} ${connect_timeout})
-                if [ "$status2" = "200" ]; then
-                        result=1
-                else
-                        result=2
-                        ping -c 3 -W 1 223.5.5.5 > /dev/null 2>&1
-                        [ $? -eq 0 ] && {
-                                result=1
-                        }
-                fi
+            result=2
+            ping -c 3 -W 1 1.1.1.1 > /dev/null 2>&1
+            [ $? -eq 0 ] && {
+                result=1
+            }
         fi
-        echo $result
+    fi
+
+    echo $result
 }
 
 url_test_node() {
