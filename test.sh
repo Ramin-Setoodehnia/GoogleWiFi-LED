@@ -43,22 +43,30 @@ test_url() {
 }
 
 test_proxy() {
-    result=0
+    result=2
+    success_count=0
+    fail_count=0
 
-    status=$(test_url "https://www.google.com/generate_204" ${retry_num} ${connect_timeout})
-    if [ "$status" = "204" ] || [ "$status" = "200" ]; then
+    for i in 1 2 3; do
+        status=$(test_url "https://www.google.com/generate_204" ${retry_num} ${connect_timeout})
+        if [ "$status" = "204" ] || [ "$status" = "200" ]; then
+            success_count=$((success_count+1))
+        else
+            status2=$(test_url "https://www.twitter.com" ${retry_num} ${connect_timeout})
+            if [ "$status2" = "200" ]; then
+                success_count=$((success_count+1))
+            else
+                fail_count=$((fail_count+1))
+            fi
+        fi
+        sleep 1
+    done
+
+    if [ $success_count -ge 2 ]; then
         result=0
     else
-        status2=$(test_url "https://www.twitter.com" ${retry_num} ${connect_timeout})
-        if [ "$status2" = "200" ]; then
-            result=1
-        else
-            result=2
-            ping -c 3 -W 1 1.1.1.1 > /dev/null 2>&1
-            [ $? -eq 0 ] && {
-                result=1
-            }
-        fi
+        ping -c 3 -W 1 8.8.8.8 > /dev/null 2>&1
+        [ $? -eq 0 ] && result=1
     fi
 
     echo $result
