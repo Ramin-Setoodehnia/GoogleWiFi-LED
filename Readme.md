@@ -2,8 +2,10 @@
 
 ## Install
 
-```bash
-curl -sSL https://raw.githubusercontent.com/Ramin-Setoodehnia/GoogleWiFi-LED/refs/heads/main/install.sh -o /tmp/install.sh && chmod +x /tmp/install.sh && /tmp/install.sh
+```
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Ramin-Setoodehnia/GoogleWiFi-LED/main/Install.sh)"
+
 ```
 ```bash
 reboot
