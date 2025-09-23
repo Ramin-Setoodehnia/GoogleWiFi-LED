@@ -4,7 +4,6 @@
 
 ```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Ramin-Setoodehnia/GoogleWiFi-LED/main/Install.sh)"
-
 ```
 ```
 reboot
