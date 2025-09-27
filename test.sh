@@ -59,7 +59,7 @@ test_proxy() {
                 fail_count=$((fail_count+1))
             fi
         fi
-        sleep 1
+        sleep 3
     done
 
     if [ $success_count -ge 2 ]; then
@@ -71,6 +71,7 @@ test_proxy() {
 
     echo $result
 }
+
 
 url_test_node() {
         result=0
