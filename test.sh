@@ -59,7 +59,7 @@ test_proxy() {
                 fail_count=$((fail_count+1))
             fi
         fi
-        sleep 3
+        sleep 5
     done
 
     if [ $success_count -ge 2 ]; then
